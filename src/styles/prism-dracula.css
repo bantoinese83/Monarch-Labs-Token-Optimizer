@@ -1,0 +1,144 @@
+/* Dracula Theme for Prism.js */
+/* Based on the color scheme from the image */
+
+code[class*='language-'],
+pre[class*='language-'] {
+  color: #f8f8f2;
+  background: #1e1e1e;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #6272a4; /* Gray-green for comments */
+}
+
+.token.punctuation {
+  color: #f8f8f2;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #8be9fd; /* Cyan for properties/tags */
+}
+
+.token.boolean {
+  color: #bd93f9; /* Purple for booleans */
+}
+
+.token.number {
+  color: #ffb86c; /* Orange for numbers - matching image */
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #50fa7b; /* Green for strings - matching image */
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #f8f8f2;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #bd93f9; /* Purple for keywords - matching image */
+}
+
+.token.function,
+.token.class-name {
+  color: #50fa7b; /* Green for functions */
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #ffb86c; /* Orange for variables/regex */
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+/* JSON specific */
+.language-json .token.property {
+  color: #8be9fd; /* Cyan/teal for object keys - matching image */
+}
+
+.language-json .token.string {
+  color: #50fa7b; /* Green for string values */
+}
+
+.language-json .token.number {
+  color: #ffb86c; /* Orange for numbers - matching image */
+}
+
+.language-json .token.boolean {
+  color: #bd93f9; /* Purple for booleans */
+}
+
+.language-json .token.null {
+  color: #bd93f9; /* Purple for null */
+}
+
+/* YAML specific */
+.language-yaml .token.atrule {
+  color: #8be9fd; /* Cyan for YAML keys */
+}
+
+.language-yaml .token.string {
+  color: #50fa7b; /* Green for YAML values */
+}
+
+.language-yaml .token.number {
+  color: #ffb86c; /* Orange for numbers - matching image */
+}
+
+/* Line numbers (if needed) */
+.line-numbers .line-numbers-rows {
+  border-right-color: #44475a;
+}
+
+.line-numbers-rows > span:before {
+  color: #6272a4;
+}
+

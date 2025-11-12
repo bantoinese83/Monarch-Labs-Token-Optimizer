@@ -1,0 +1,50 @@
+{
+  "name": "monarch-labs-token-optimizer",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,json,css}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,json,css}\"",
+    "type-check": "tsc --noEmit",
+    "check": "npm run type-check && npm run lint && npm run format:check"
+  },
+  "dependencies": {
+    "@google/genai": "^1.29.0",
+    "@nivo/bar": "^0.99.0",
+    "@nivo/core": "^0.99.0",
+    "@nivo/pie": "^0.99.0",
+    "@types/prismjs": "^1.26.5",
+    "prismjs": "^1.30.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tiktoken": "1.0.14"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.2.3",
+    "@types/react-dom": "^19.2.2",
+    "@typescript-eslint/eslint-plugin": "^8.46.4",
+    "@typescript-eslint/parser": "^8.46.4",
+    "@vitejs/plugin-react": "^5.0.0",
+    "autoprefixer": "^10.4.22",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "knip": "^5.69.0",
+    "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
+    "tailwindcss": "^3.4.18",
+    "typescript": "~5.8.2",
+    "typescript-eslint": "^8.46.4",
+    "vite": "^6.2.0",
+    "vite-plugin-top-level-await": "^1.6.0",
+    "vite-plugin-wasm": "^3.5.0"
+  }
+}

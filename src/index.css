@@ -1,0 +1,409 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+:root {
+  --vscode-bg: #1e1e1e;
+  --vscode-editor-bg: #252526;
+  --vscode-sidebar-bg: #252526;
+  --vscode-active-bg: #2a2d2e;
+  --vscode-border: #3e3e42;
+  --vscode-text: #cccccc;
+  --vscode-text-muted: #858585;
+  --vscode-accent: #007acc;
+  --vscode-accent-hover: #005a9e;
+  --vscode-selection: #264f78;
+  --vscode-tab-active: #1e1e1e;
+  --vscode-tab-inactive: #2d2d30;
+  --vscode-success: #4ec9b0;
+  --vscode-error: #f48771;
+  --vscode-warning: #dcdcaa;
+  --vscode-info: #569cd6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus visible styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--vscode-focusBorder, #007acc);
+  outline-offset: 2px;
+}
+
+/* Disable focus outline for mouse users, keep for keyboard */
+.js-focus-visible *:focus:not(.focus-visible) {
+  outline: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.code-editor {
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+.vscode-button {
+  background: var(--vscode-button-background);
+  color: var(--vscode-button-foreground);
+  border: 1px solid var(--vscode-border);
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.2s;
+}
+
+.vscode-button:hover {
+  background: var(--vscode-button-hoverBackground);
+}
+
+.vscode-button:active {
+  background: var(--vscode-accent);
+}
+
+.vscode-input {
+  background: var(--vscode-input-background);
+  color: var(--vscode-input-foreground);
+  border: 1px solid var(--vscode-input-border);
+  padding: 4px 8px;
+  font-size: 13px;
+}
+
+.vscode-input:focus {
+  outline: 1px solid var(--vscode-focusBorder);
+  outline-offset: -1px;
+}
+
+.vscode-tab {
+  background: var(--vscode-tab-inactive);
+  color: var(--vscode-text-muted);
+  border: 1px solid var(--vscode-border);
+  border-bottom: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 13px;
+  position: relative;
+}
+
+.vscode-tab.active {
+  background: var(--vscode-tab-active);
+  color: var(--vscode-text);
+  border-top: 2px solid var(--vscode-accent);
+}
+
+.vscode-panel {
+  background: var(--vscode-editor-bg);
+  border: 1px solid var(--vscode-border);
+  padding: 16px;
+}
+
+.vscode-sidebar {
+  background: var(--vscode-sidebar-bg);
+  border-right: 1px solid var(--vscode-border);
+  width: 250px;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.vscode-status-bar {
+  background: var(--vscode-statusBar-background);
+  color: var(--vscode-statusBar-foreground);
+  border-top: 1px solid var(--vscode-border);
+  padding: 4px 8px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Score Widget Styles */
+.score-widgets-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.score-widget {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.score-widget__surface {
+  animation: fade-in 0.6s ease-out;
+  background: #252526;
+  border: 1px solid #3e3e42;
+  border-radius: 0.5rem;
+  min-width: 0;
+  width: 100%;
+  transition: border-color 0.3s;
+}
+
+.score-widget__surface:hover {
+  border-color: #007acc;
+}
+
+.score-widget__content {
+  padding: 1.5rem;
+}
+
+.score-widget__header {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.score-widget__title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #cccccc;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.score-widget__badge {
+  border-radius: 0.25rem;
+  flex-shrink: 0;
+  font-size: 0.625rem;
+  font-weight: 600;
+  line-height: 1.5;
+  padding: 0.25rem 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.score-widget__badge--weak {
+  background-color: #f48771;
+  color: #1e1e1e;
+}
+
+.score-widget__badge--moderate {
+  background-color: #dcdcaa;
+  color: #1e1e1e;
+}
+
+.score-widget__badge--strong {
+  background-color: #4ec9b0;
+  color: #1e1e1e;
+}
+
+.score-widget__graph-container {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.score-widget__half-circle {
+  display: block;
+  margin: auto;
+  width: auto;
+  max-width: 100%;
+  height: 6rem;
+}
+
+.score-widget__half-circle-track {
+  stroke: #3e3e42;
+}
+
+.score-widget__score-display {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.score-widget__score {
+  font-size: 2rem;
+  font-weight: 500;
+  height: 3rem;
+  overflow: hidden;
+  position: relative;
+  color: #cccccc;
+}
+
+.score-widget__score-digit {
+  display: inline-block;
+}
+
+.score-widget__score-digits {
+  position: absolute;
+  inset: 0;
+}
+
+.score-widget__score-digits--dimmed {
+  color: #858585;
+}
+
+.score-widget__score-digits + .score-widget__score-digits {
+  transform: translateY(100%);
+}
+
+.score-widget__score--animated .score-widget__score-digit {
+  animation: slide-to-top 0.8s 0.4s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+.score-widget__score--animated .score-widget__score-digit:nth-child(2) {
+  animation-duration: 1.1s;
+  animation-delay: 0.5s;
+}
+
+.score-widget__score--animated .score-widget__score-digit:nth-child(3) {
+  animation-duration: 1.4s;
+  animation-delay: 0.6s;
+}
+
+.score-widget__score-label {
+  color: #858585;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.score-widget__description {
+  color: #858585;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 0;
+  min-height: 3rem;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-to-top {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .score-widgets-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Note: Breakpoint values are defined in constants/ui.ts */
+
+/* Smooth transitions for interactive elements */
+button,
+select,
+input,
+textarea {
+  transition: all 0.2s ease;
+}
+
+/* Better touch targets for mobile */
+/* Note: Touch target sizes are defined in constants/ui.ts */
+@media (max-width: 640px) {
+  button:not(.no-touch-target),
+  select,
+  input[type="button"],
+  input[type="submit"] {
+    min-height: 44px;
+  }
+  
+  /* Prevent text size adjustment on iOS */
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+  
+  /* Improve scrolling on mobile */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Better spacing on mobile */
+  .space-y-4 > * + * {
+    margin-top: 1rem;
+  }
+  
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Loading state improvements */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Scrollbar styling */
+/* Note: Scrollbar dimensions are defined in constants/ui.ts */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3e3e42;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4a4a4a;
+}
+
+/* Selection styling */
+::selection {
+  background: var(--vscode-selection);
+  color: var(--vscode-text);
+}
