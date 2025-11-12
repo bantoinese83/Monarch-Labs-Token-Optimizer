@@ -4,6 +4,7 @@
 
 **Advanced token usage analysis and optimization tool for LLM developers**
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20App-blue.svg)](https://monarch-labs-token-optimizer.vercel.app)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue.svg)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-19.2-61dafb.svg)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-6.2-646cff.svg)](https://vitejs.dev/)
@@ -13,6 +14,8 @@
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
 [![Code Quality](https://img.shields.io/badge/code%20quality-A+-green.svg)]()
 [![Type Coverage](https://img.shields.io/badge/type%20coverage-100%25-brightgreen.svg)]()
+
+**🌐 Live Application:** [monarch-labs-token-optimizer.vercel.app](https://monarch-labs-token-optimizer.vercel.app)
 
 </div>
 
@@ -127,6 +130,14 @@
 ---
 
 ## 🚀 Getting Started
+
+### 🌐 Try It Online
+
+**Live Demo:** [monarch-labs-token-optimizer.vercel.app](https://monarch-labs-token-optimizer.vercel.app)
+
+You can use the application directly in your browser without any installation. Just visit the link above and start comparing formats!
+
+### 📦 Local Installation
 
 ### Prerequisites
 
