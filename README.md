@@ -14,6 +14,7 @@
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
 [![Code Quality](https://img.shields.io/badge/code%20quality-A+-green.svg)]()
 [![Type Coverage](https://img.shields.io/badge/type%20coverage-100%25-brightgreen.svg)]()
+[![Tests](https://img.shields.io/badge/tests-187%20passing-brightgreen.svg)]()
 
 **🌐 Live:** [monarch-labs-token-optimizer.vercel.app](https://monarch-labs-token-optimizer.vercel.app)
 
@@ -176,6 +177,28 @@ src/
 - Path aliases (`@/` for `src/`)
 - Barrel exports where it makes sense
 - No prop drilling (Context API)
+
+### Testing
+
+The project includes a comprehensive test suite with **187 tests** covering golden cases and edge cases.
+
+```bash
+npm run test          # Run tests in watch mode
+npm run test:run      # Run tests once (CI mode)
+npm run test:ui       # Run tests with UI
+npm run test:coverage # Generate coverage report
+```
+
+**Test coverage:**
+- **CSV Parser** (33 tests) - Parsing, quoted fields, edge cases
+- **Tokenizer** (34 tests) - Token analysis, structural vs data tokens
+- **Cost Calculator** (19 tests) - Cost calculations, ROI, context windows
+- **Recommendations** (21 tests) - Format scoring, context-aware suggestions
+- **Export Utilities** (27 tests) - CSV/JSON/Markdown export, shareable links
+- **Tip Generator** (25 tests) - AI-generated tips, context awareness
+- **Components** (28 tests) - CSVTable, InputForm rendering and behavior
+
+All tests use Vitest with React Testing Library. See `TEST_SUITE.md` for detailed documentation.
 
 ---
 
